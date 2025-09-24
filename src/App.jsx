@@ -2,14 +2,15 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import "./App.css";
 import Login from './Pages/Auth/Login';
 import DashboardLayout from './Components/Dashboard/DashboardLayout';
+import Providers from './Components/Dashboard/providers/Providers';
 
-// Temporary placeholder components for dashboard pages
+
 function Overview() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold text-gray-900 mb-4">Dashboard Overview</h1>
       <p className="text-gray-600">Welcome to your dashboard!</p>
-    </div>
+    </div> 
   );
 }
 
@@ -73,6 +74,8 @@ function App() {
           <Route path="customers" element={<Customers />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="providers" element={<Providers />} />
+        
           {/* Add more routes as needed */}
         </Route>
 
