@@ -3,6 +3,9 @@ import "./App.css";
 import Login from './Pages/Auth/Login';
 import DashboardLayout from './Components/Dashboard/DashboardLayout';
 import Providers from './Components/Dashboard/providers/Providers';
+import Auditlog from './Components/Dashboard/audit-log/AuditLog';
+import Newsroom from './Components/Dashboard/newsroom/Newsroom';
+import Settings from './Components/Dashboard/settings/ProfileSettings';
 
 
 function Overview() {
@@ -50,14 +53,7 @@ function Transactions() {
   );
 }
 
-function Settings() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold text-gray-900 mb-4">Settings</h1>
-      <p className="text-gray-600">Settings page content goes here.</p>
-    </div>
-  );
-}
+
 
 function App() {
   return (
@@ -75,6 +71,9 @@ function App() {
           <Route path="transactions" element={<Transactions />} />
           <Route path="settings" element={<Settings />} />
           <Route path="providers" element={<Providers />} />
+          <Route path="audit-log" element={<Auditlog />} />
+          <Route path="newsroom" element={<Newsroom />} />
+          <Route path="settings" element={<Settings />} />
         
           {/* Add more routes as needed */}
         </Route>

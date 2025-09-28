@@ -104,37 +104,39 @@ const ProviderInfo = ({ provider }) => {
       {/* Left Section - Performance, Incidents, and Usage Chart */}
       <div className="flex-1 space-y-4">
         {/* Performance Summary */}
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-medium text-gray-900">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-lg font-medium text-gray-900">
               Performance Summary
             </h3>
-            <div className="text-xs text-gray-500">
-              <span className="mr-3">Category: {provider.category}</span>
-              <span>Environment: {provider.environment}</span>
+            <div className="text-sm text-gray-500">
+              <span className="mr-6">Category: <span className="font-medium text-gray-900">{provider.category}</span></span>
+              <span>Environment: <span className="font-medium text-gray-900">{provider.environment}</span></span>
             </div>
           </div>
+          
+          <div className="border-b border-gray-200 mb-6"></div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-gray-50 rounded-lg p-3">
-              <div className="text-xs text-gray-600 mb-1">
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <div className="text-sm text-gray-600 mb-4">
                 Uptime (24h uptime)
               </div>
-              <div className="flex items-center">
-                <span className="text-2xl font-bold text-gray-900">99.9%</span>
-                <div className="ml-2 flex items-center text-red-600 text-xs border border-red-200 rounded px-1.5 py-0.5">
-                  <TrendingDown className="w-3 h-3 mr-1" />
+              <div className="flex items-center justify-between">
+                <span className="text-4xl font-bold text-gray-900">99.9%</span>
+                <div className="flex items-center text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-3 py-1">
+                  <TrendingDown className="w-4 h-4 mr-1" />
                   2%
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-3">
-              <div className="text-xs text-gray-600 mb-1">Error rate</div>
-              <div className="flex items-center">
-                <span className="text-2xl font-bold text-gray-900">0.5%</span>
-                <div className="ml-2 flex items-center text-red-600 text-xs border border-red-200 rounded px-1.5 py-0.5">
-                  <TrendingDown className="w-3 h-3 mr-1" />
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <div className="text-sm text-gray-600 mb-4">Error rate</div>
+              <div className="flex items-center justify-between">
+                <span className="text-4xl font-bold text-gray-900">0.5%</span>
+                <div className="flex items-center text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-3 py-1">
+                  <TrendingDown className="w-4 h-4 mr-1" />
                   2%
                 </div>
               </div>
@@ -143,23 +145,26 @@ const ProviderInfo = ({ provider }) => {
         </div>
 
         {/* Latest Incidents */}
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <h4 className="text-base font-medium text-gray-900 mb-3">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <h4 className="text-lg font-medium text-gray-900 mb-6">
             Latest Incidents
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          
+          <div className="border-b border-gray-200 mb-6"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {incidentsData.map((incident, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-3">
-                <div className="font-medium text-xs text-gray-900 mb-1">
+              <div key={index} className="bg-white border border-gray-200 rounded-2xl p-6">
+                <div className="font-medium text-sm text-gray-900 mb-3">
                   {incident.type}
                 </div>
-                <div className="text-xs text-gray-600 mb-1">
+                <div className="text-sm text-gray-600 mb-2">
                   Root Cause: {incident.rootCause}
                 </div>
-                <div className="text-xs text-gray-600 mb-1">
+                <div className="text-sm text-gray-600 mb-2">
                   Resolution: {incident.resolution}
                 </div>
-                <div className="text-xs text-gray-500">{incident.date}</div>
+                <div className="text-sm text-gray-500">{incident.date}</div>
               </div>
             ))}
           </div>

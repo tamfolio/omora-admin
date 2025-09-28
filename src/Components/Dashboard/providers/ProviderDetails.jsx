@@ -25,7 +25,7 @@ const ProviderDetails = ({ provider, onBack }) => {
       </div>
 
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-gray-900">{provider.providerName}</h1>
         <div className="flex space-x-3">
           <button className="px-3 py-1.5 text-sm font-medium text-white bg-teal-600 border border-transparent rounded-lg hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
@@ -37,19 +37,14 @@ const ProviderDetails = ({ provider, onBack }) => {
         </div>
       </div>
 
-      {/* Tab Navigation */}
-      <div className="border-b border-gray-200 mb-4">
-        <div className="flex space-x-8">
-          <div className="py-2 px-1 border-b-2 border-teal-500 text-sm font-medium text-teal-600">
-            Provider Details
-          </div>
-          <div className="py-2 px-1 text-sm font-medium text-gray-400 cursor-not-allowed">
-            Audit Log
-          </div>
+      {/* Page Title */}
+      <div className="mb-6">
+        <div className="px-6 py-3 text-sm font-medium rounded-lg border bg-white text-gray-900 border-gray-300 shadow-sm inline-block">
+          Provider Details
         </div>
       </div>
 
-      {/* Content - Flexible Layout */}
+      {/* Content */}
       <div className="space-y-4">
         <ProviderInfo provider={provider} />
       </div>

@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { Search, Download } from 'lucide-react';
 import CalendarPicker from './CalenderPicker';
 import ProvidersTable from './ProvidersTable';
@@ -20,6 +21,19 @@ function Providers() {
     column: null,
     direction: SORT_DIRECTIONS.NONE
   });
+
+  const { setPageTitle } = useOutletContext();
+
+  useEffect(() => {
+    // A check to ensure setPageTitle is available before calling it
+    if (setPageTitle) {
+      if (selectedProvider) {
+        setPageTitle(selectedProvider.providerName);
+      } else {
+        setPageTitle('Providers');
+      }
+    }
+  }, [selectedProvider, setPageTitle]);
 
   const providersData = [
     {
@@ -115,33 +129,32 @@ function Providers() {
   }
 
   return (
-    <div className="space-y-6 p-6 min-w-full" style={{minWidth: '1200px'}}>
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-gray-900">Providers</h1>
+    <div className="space-y-6 p-4 w-full">
+      <div className="flex items-center justify-end">
         <button
           onClick={handleExport}
-          className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+          className="flex items-center space-x-2 px-3 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
         >
-          <Download className="w-4 h-4" />
+          <Download className="w-3 h-3" />
           <span>Export CSV</span>
         </button>
       </div>
 
       <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
-        <div className="px-6 py-4 border-b border-gray-200">
+        <div className="px-4 py-3 border-b border-gray-200">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-medium text-gray-900">Providers List</h2>
-            <div className="flex items-center space-x-4">
+            <h2 className="text-base font-medium text-gray-900">Providers List</h2>
+            <div className="flex items-center space-x-3">
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Search"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-48 pl-10 pr-8 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-40 pl-8 pr-6 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                 />
-                <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 bg-gray-200 px-1.5 py-0.5 rounded">
+                <Search className="w-3 h-3 text-gray-400 absolute left-2.5 top-1/2 transform -translate-y-1/2" />
+                <span className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 bg-gray-200 px-1 py-0.5 rounded">
                   ⌘K
                 </span>
               </div>
@@ -154,23 +167,21 @@ function Providers() {
           </div>
         </div>
 
-        <div className="overflow-hidden">
-          <ProvidersTable
-            providers={filteredProviders}
-            onSort={handleSort}
-            getSortDirection={getSortDirection}
-            onProviderClick={handleProviderClick}
-          />
-        </div>
+        <ProvidersTable
+          providers={filteredProviders}
+          onSort={handleSort}
+          getSortDirection={getSortDirection}
+          onProviderClick={handleProviderClick}
+        />
 
-        <div className="px-6 py-4 border-t border-gray-200">
+        <div className="px-4 py-3 border-t border-gray-200">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-700">Page 1 of 10</span>
+            <span className="text-xs text-gray-700">Page 1 of 10</span>
             <div className="flex space-x-2">
-              <button className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+              <button className="px-2 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
                 Previous
               </button>
-              <button className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+              <button className="px-2 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
                 Next
               </button>
             </div>

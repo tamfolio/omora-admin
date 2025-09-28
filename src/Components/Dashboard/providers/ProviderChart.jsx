@@ -39,9 +39,7 @@ const ProviderChart = () => {
           <h3 className="text-base font-medium text-gray-900">Usage</h3>
           <p className="text-xs text-gray-500">Calls/min</p>
         </div>
-        <button className="p-1.5 hover:bg-gray-100 rounded-lg">
-          <MoreHorizontal className="w-4 h-4 text-gray-400" />
-        </button>
+        
       </div>
       
       <div className="h-64">
