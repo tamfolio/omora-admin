@@ -1,21 +1,20 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Sidebar from './Sidebar'
+import React, { useState } from 'react'; 
+import { Outlet, useOutletContext } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 function DashboardLayout() {
+  const [pageTitle, setPageTitle] = useState('Dashboard'); 
+
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Sidebar */}
+    <div className="flex h-screen">
       <Sidebar />
       
-      {/* Main Content Area */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Top Header */}
         <header className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Left side - could add breadcrumbs here */}
             <div className="flex items-center space-x-4">
-              <h1 className="text-xl font-semibold text-gray-900">Dashboard</h1>
+              {/* Use the dynamic pageTitle state here */}
+              <h1 className="text-xl font-semibold text-gray-900">{pageTitle}</h1>
             </div>
             
             {/* Right side - search and user actions */}
@@ -75,8 +74,9 @@ function DashboardLayout() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto p-6">
-          <Outlet />
+         <main className="flex-1 overflow-y-auto p-6">
+
+          <Outlet context={{ setPageTitle }} />
         </main>
       </div>
     </div>
