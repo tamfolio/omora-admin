@@ -15,7 +15,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm, itemTitle }) => {
       className="fixed inset-0 flex items-center justify-center z-50"
       onClick={handleOverlayClick}
     >
-      <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4 shadow-xl border border-gray-200">
+      <div className="bg-opacity-50 backdrop-blur-sm rounded-lg p-6 w-full max-w-md mx-4 shadow-xl border border-gray-200">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mx-auto mb-4">
             <AlertCircle className="w-6 h-6 text-red-600" />

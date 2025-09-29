@@ -1,0 +1,24 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "bounce",
+    "doye",
+    "main",
+    "origin",
+    "taamilore"
+  ],
+  "parent": {
+    "bounce": "main",
+    "doye": "main",
+    "main": null,
+    "origin": "main",
+    "taamilore": "main"
+  },
+  "order": [
+    "main",
+    "bounce",
+    "doye",
+    "origin",
+    "taamilore"
+  ]
+}

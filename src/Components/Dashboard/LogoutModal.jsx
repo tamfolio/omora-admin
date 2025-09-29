@@ -1,8 +1,35 @@
 import React from 'react';
 import { X, AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
+const LogoutModal = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
+
+  const handleLogout = () => {
+    // Clear auth token from localStorage
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    
+    // Clear auth token from sessionStorage (if used)
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('token');
+    
+    // Clear any cookies (if you're using them)
+    document.cookie.split(";").forEach((c) => {
+      document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    
+    // Redirect to login page
+    navigate('/login');
+    
+    // Close modal
+    onClose();
+  };
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -12,7 +39,7 @@ const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
 
   return (
     <div 
-      className="fixed inset-0 flex items-center justify-center z-50  bg-opacity-50"
+      className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 backdrop-blur-sm"
       onClick={handleOverlayClick}
     >
       <div 
@@ -42,7 +69,7 @@ const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
             
             <div className="space-y-3">
               <button
-                onClick={onConfirm}
+                onClick={handleLogout}
                 className="w-full px-4 py-3 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
                 Logout
