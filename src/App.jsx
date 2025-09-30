@@ -12,14 +12,17 @@ import PauseRequestDetails from './Components/Dashboard/Investment/PauseRequestD
 import InvestmentList from './Components/Dashboard/Investment/InvestmentList/InvestmentList';
 import BulkInvestmentDetails from './Components/Dashboard/Investment/InvestmentList/BulkInvestmentDetails';
 import RecurringInvestmentDetails from './Components/Dashboard/Investment/InvestmentList/ReoccuringInvestmentDetails';
+import Providers from './Components/Dashboard/providers/Providers';
+import Auditlog from './Components/Dashboard/audit-log/AuditLog';
+import Newsroom from './Components/Dashboard/newsroom/Newsroom';
+import Settings from './Components/Dashboard/settings/ProfileSettings';
 
-// Temporary placeholder components for dashboard pages
 function Overview() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold text-gray-900 mb-4">Dashboard Overview</h1>
       <p className="text-gray-600">Welcome to your dashboard!</p>
-    </div>
+    </div> 
   );
 }
 
@@ -37,15 +40,6 @@ function Transactions() {
     <div className="p-6">
       <h1 className="text-2xl font-bold text-gray-900 mb-4">Transactions</h1>
       <p className="text-gray-600">Transactions page content goes here.</p>
-    </div>
-  );
-}
-
-function Settings() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold text-gray-900 mb-4">Settings</h1>
-      <p className="text-gray-600">Settings page content goes here.</p>
     </div>
   );
 }
@@ -71,11 +65,13 @@ function App() {
           <Route path="investments-list" element={<InvestmentList />} />
           <Route path="bulk-investments/:id" element={<BulkInvestmentDetails />} />
           <Route path="recurring-investments/:id" element={<RecurringInvestmentDetails />} />
+          <Route path="providers" element={<Providers />} />
+          <Route path="audit-log" element={<Auditlog />} />
+          <Route path="newsroom" element={<Newsroom />} />
           <Route path="settings" element={<Settings />} />
-          {/* Add more routes as needed */}
         </Route>
 
-        {/* Redirect root to login or dashboard */}
+        {/* Root redirect */}
         <Route path="/" element={<Navigate to="/login" replace />} />
         
         {/* Catch all route - redirect to login */}
