@@ -2,11 +2,20 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import "./App.css";
 import Login from './Pages/Auth/Login';
 import DashboardLayout from './Components/Dashboard/DashboardLayout';
+import Insights from './Components/Dashboard/Insights/Insights';
+import CustomersMain from './Components/Dashboard/Customers/CustomersMain';
+import CustomerProfile from './Components/Dashboard/Customers/CustomersProfile';
+import TransactionsMain from './Components/Dashboard/Transactions/TransactionsMain';
+import TransactionsDetails from './Components/Dashboard/Transactions/TransactionsDetails';
+import PauseRequest from './Components/Dashboard/Investment/PauseRequest';
+import PauseRequestDetails from './Components/Dashboard/Investment/PauseRequestDetails';
+import InvestmentList from './Components/Dashboard/Investment/InvestmentList/InvestmentList';
+import BulkInvestmentDetails from './Components/Dashboard/Investment/InvestmentList/BulkInvestmentDetails';
+import RecurringInvestmentDetails from './Components/Dashboard/Investment/InvestmentList/ReoccuringInvestmentDetails';
 import Providers from './Components/Dashboard/providers/Providers';
 import Auditlog from './Components/Dashboard/audit-log/AuditLog';
 import Newsroom from './Components/Dashboard/newsroom/Newsroom';
 import Settings from './Components/Dashboard/settings/ProfileSettings';
-
 
 function Overview() {
   return (
@@ -14,24 +23,6 @@ function Overview() {
       <h1 className="text-2xl font-bold text-gray-900 mb-4">Dashboard Overview</h1>
       <p className="text-gray-600">Welcome to your dashboard!</p>
     </div> 
-  );
-}
-
-function Individuals() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold text-gray-900 mb-4">Individuals</h1>
-      <p className="text-gray-600">Individuals page content goes here.</p>
-    </div>
-  );
-}
-
-function Businesses() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold text-gray-900 mb-4">Businesses</h1>
-      <p className="text-gray-600">Businesses page content goes here.</p>
-    </div>
   );
 }
 
@@ -53,8 +44,6 @@ function Transactions() {
   );
 }
 
-
-
 function App() {
   return (
     <div className="App">
@@ -65,20 +54,24 @@ function App() {
         {/* Dashboard routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Overview />} /> {/* /dashboard */}
-          <Route path="individuals" element={<Individuals />} />
-          <Route path="businesses" element={<Businesses />} />
-          <Route path="customers" element={<Customers />} />
-          <Route path="transactions" element={<Transactions />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="individuals" element={<Insights userType="individuals" />} />
+          <Route path="businesses" element={<Insights userType="businesses" />} />
+          <Route path="customers" element={<CustomersMain />} />
+          <Route path="customers/:id" element={<CustomerProfile />} />
+          <Route path="transactions" element={<TransactionsMain />} />
+          <Route path="transactions/:id" element={<TransactionsDetails />} />
+          <Route path="pause-requests" element={<PauseRequest />} />
+          <Route path="pause-requests/:id" element={<PauseRequestDetails />} />
+          <Route path="investments-list" element={<InvestmentList />} />
+          <Route path="bulk-investments/:id" element={<BulkInvestmentDetails />} />
+          <Route path="recurring-investments/:id" element={<RecurringInvestmentDetails />} />
           <Route path="providers" element={<Providers />} />
           <Route path="audit-log" element={<Auditlog />} />
           <Route path="newsroom" element={<Newsroom />} />
           <Route path="settings" element={<Settings />} />
-        
-          {/* Add more routes as needed */}
         </Route>
 
-        {/* Redirect root to login or dashboard */}
+        {/* Root redirect */}
         <Route path="/" element={<Navigate to="/login" replace />} />
         
         {/* Catch all route - redirect to login */}
