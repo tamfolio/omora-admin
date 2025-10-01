@@ -15,7 +15,11 @@ import RecurringInvestmentDetails from './Components/Dashboard/Investment/Invest
 import Providers from './Components/Dashboard/providers/Providers';
 import Auditlog from './Components/Dashboard/audit-log/AuditLog';
 import Newsroom from './Components/Dashboard/newsroom/Newsroom';
+import Compliance from './Components/Dashboard/compliance/Compliance';
+import IndividualDetail from './Components/Dashboard/compliance/IndividualDetail';
+import BusinessDetail from './Components/Dashboard/compliance/BusinessDetail';
 import Settings from './Components/Dashboard/settings/ProfileSettings';
+import RatesAndFees from './Components/Dashboard/rates-fees/RatesAndFees';
 
 function Overview() {
   return (
@@ -68,6 +72,10 @@ function App() {
           <Route path="providers" element={<Providers />} />
           <Route path="audit-log" element={<Auditlog />} />
           <Route path="newsroom" element={<Newsroom />} />
+          <Route path="compliance" element={<Compliance />} />
+          <Route path="compliance/individual/:id" element={<IndividualDetail />} />
+          <Route path="compliance/business/:id" element={<BusinessDetail />} />
+          <Route path="rates-fees" element={<RatesAndFees />} />
           <Route path="settings" element={<Settings />} />
         </Route>
 
