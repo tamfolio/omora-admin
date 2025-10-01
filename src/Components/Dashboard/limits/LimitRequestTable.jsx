@@ -7,18 +7,17 @@ const SORT_DIRECTIONS = {
   NONE: 'none'
 };
 
-const getSortIcon = (direction) => {
-  switch (direction) {
-    case SORT_DIRECTIONS.ASC:
-      return <ChevronUp color='#A4A7AE' className="w-3 h-3" />;
-    case SORT_DIRECTIONS.DESC:
-      return <ChevronDown color='#A4A7AE' className="w-3 h-3" />;
-    default:
-      return <ChevronsUpDown color='#A4A7AE' className="w-3 h-3" />;
-  }
-};
-
 const LimitRequestTable = ({ sortedRequests, handleSort, getSortDirection, setSelectedRequest }) => {
+  const getSortIcon = (direction) => {
+    switch (direction) {
+      case SORT_DIRECTIONS.ASC:
+        return <ChevronUp color='#A4A7AE' className="w-3 h-3" />;
+      case SORT_DIRECTIONS.DESC:
+        return <ChevronDown color='#A4A7AE' className="w-3 h-3" />;
+      default:
+        return <ChevronsUpDown color='#A4A7AE' className="w-3 h-3" />;
+    }
+  };
   return (
     <div className="bg-white border border-[#E9EAEB] rounded-lg">
       <div className="overflow-x-auto">
