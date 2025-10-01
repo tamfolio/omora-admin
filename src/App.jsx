@@ -20,6 +20,7 @@ import IndividualDetail from './Components/Dashboard/compliance/IndividualDetail
 import BusinessDetail from './Components/Dashboard/compliance/BusinessDetail';
 import Settings from './Components/Dashboard/settings/ProfileSettings';
 import RatesAndFees from './Components/Dashboard/rates-fees/RatesAndFees';
+import Limits from './Components/Dashboard/limits/Limits';
 
 function Overview() {
   return (
@@ -76,6 +77,7 @@ function App() {
           <Route path="compliance/individual/:id" element={<IndividualDetail />} />
           <Route path="compliance/business/:id" element={<BusinessDetail />} />
           <Route path="rates-fees" element={<RatesAndFees />} />
+          <Route path="limits" element={<Limits />} />
           <Route path="settings" element={<Settings />} />
         </Route>
 
