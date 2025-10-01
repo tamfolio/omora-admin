@@ -1,0 +1,153 @@
+// Mock data for Individual Detail page
+export const createIndividualData = (id) => ({
+  id: id,
+  individualId: "2345676",
+  firstName: "Simon",
+  middleName: "Smith",
+  lastName: "Moneyton",
+  email: "mikesmith@gmail.com",
+  dateOfBirth: "07/07/1997",
+  gender: "Male",
+  bvn: "2233445566",
+  occupation: "Surgeon",
+  sourceOfFunds: "Inheritance",
+  signupDate: "21/04/2025",
+  kycStatus: "Approved",
+  riskProfile: "Low",
+  walletFunded: true,
+  dca: true,
+  investmentType: "Investment Type",
+  investmentStatus: "Active",
+  investmentStartDate: "01/02/2025",
+  investmentEndDate: "01/02/2025",
+  tenor: "120 days",
+  roiToDate: "$50000",
+  amount: "USD $100.00",
+  usdcAvailable: "$50000",
+  ngnAvailable: "5,000,000",
+  usdtAvailable: "50000",
+  usdcLedger: "$50000",
+  ngnLedger: "5,000,000",
+  usdtLedger: "50000",
+  performanceFees: "50",
+  managementFees: "200",
+  transactionFees: "200",
+  dailyWithdrawalLimit: "5000 USDT",
+  singleWithdrawalLimit: "200",
+  monthlyWithdrawalLimit: "200",
+  validId: "IMG23038477585.jpeg",
+  livenessCapture: "IMG23038477585.jpeg",
+  proofOfAddress: "IMG23038477585.jpeg",
+});
+
+export const transactionData = [
+  { id: 1, ref: "345678978", type: "Funding", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 2, ref: "345678978", type: "Withdrawal", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 3, ref: "345678978", type: "Conversion", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 4, ref: "345678978", type: "DCA Execution", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 5, ref: "345678978", type: "DCA Execution", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 6, ref: "345678978", type: "Fee", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 7, ref: "345678978", type: "DCA Execution", amount: "USD $10.00", status: "Paid", timestamp: "12:00pm\n15th July, 2025" }
+];
+
+export const investmentData = [
+  { id: 1, status: "Paid", startDate: "15th Dec, 2025", endDate: "25th Dec, 2025", tenor: "90 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" },
+  { id: 2, status: "Paid", startDate: "15th Nov, 2025", endDate: "25th Nov, 2025", tenor: "120 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" },
+  { id: 3, status: "Paid", startDate: "15th Oct, 2025", endDate: "25th Oct, 2025", tenor: "150 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" },
+  { id: 4, status: "Paid", startDate: "15th Sep, 2025", endDate: "25th Sep, 2025", tenor: "180 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" },
+  { id: 5, status: "Paid", startDate: "15th Aug, 2025", endDate: "25th Aug, 2025", tenor: "210 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" },
+  { id: 6, status: "Paid", startDate: "15th Jul, 2025", endDate: "25th Jul, 2025", tenor: "240 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" },
+  { id: 7, status: "Paid", startDate: "15th Jun, 2025", endDate: "25th Jun, 2025", tenor: "270 days", amount: "USD $10.00", dcaAmount: "USD $10.00", returns: "USD $30.00" }
+];
+
+export const auditData = [
+  { id: 1, user: "User A", role: "Operator", action: "deposited NGN 5,000,000 into account", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 2, user: "User B", role: "Admin", action: "approves account status", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 3, user: "User C", role: "Operator", action: "deposited NGN 5,000,000 into account", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 4, user: "User D", role: "Operator", action: "deposited NGN 5,000,000 into account", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 5, user: "User E", role: "Operator", action: "deposited NGN 5,000,000 into account", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 6, user: "User F", role: "Operator", action: "deposited NGN 5,000,000 into account", timestamp: "12:00pm\n15th July, 2025" },
+  { id: 7, user: "User G", role: "Operator", action: "deposited NGN 5,000,000 into account", timestamp: "12:00pm\n15th July, 2025" }
+];
+
+// Mock data for Business Detail page
+export const createBusinessData = (id) => ({
+  id: id,
+  businessId: "34567890",
+  businessName: "TechCorp Solutions Ltd",
+  registrationNumber: "RC-123456",
+  businessType: "Technology",
+  email: "info@techcorp.com",
+  phoneNumber: "+1 (555) 987-6543",
+  address: "456 Business Ave, San Francisco, CA 94105",
+  registrationDate: "10th January, 2020",
+  businessCategory: "Software Development",
+  numberOfEmployees: "25-50",
+  annualRevenue: "$2.5M - $5M",
+  signupDate: "15th July, 2025",
+  kycStatus: "Approved",
+  riskProfile: "Medium",
+  walletFunded: true,
+  dca: true,
+  directors: [
+    {
+      name: "John Doe Adesigbin",
+      email: "johndoe@gmail.com",
+      mobile: "09076543577",
+      address: "Victoria Island, Lagos",
+      bvn: "0102202567"
+    }
+  ],
+  team: [
+    {
+      name: "John Doe Adesigbin",
+      role: "Initiator",
+      email: "johndoe@gmail.com",
+      mobile: "09076543577",
+      address: "Victoria Island, Lagos",
+      bvn: "0102202567",
+      twoFAStatus: "Active",
+      kycStatus: "Pending",
+      lastLogin: "01/02/2025"
+    },
+    {
+      name: "John Doe Adesigbin",
+      role: "Admin",
+      email: "johndoe@gmail.com",
+      mobile: "09076543577",
+      address: "Victoria Island, Lagos",
+      bvn: "0102202567",
+      twoFAStatus: "Active",
+      kycStatus: "Pending",
+      lastLogin: "01/02/2025"
+    }
+  ],
+  activityStatus: "Active",
+  rmAssigned: "Smith",
+  investmentRiskProfile: "Balanced",
+  virtualAccountNumber: "0065432373",
+  investmentType: "Business Investment",
+  investmentStatus: "Active",
+  investmentStartDate: "01/02/2025",
+  investmentEndDate: "01/02/2025",
+  tenor: "150 days",
+  roiToDate: "$50000",
+  amount: "USD $3,000",
+  usdcAvailable: "$50000",
+  ngnAvailable: "5,000,000",
+  usdtAvailable: "50000",
+  usdcLedger: "$50000",
+  ngnLedger: "5,000,000",
+  usdtLedger: "50000",
+  performanceFees: "50",
+  managementFees: "200",
+  transactionFees: "200",
+  dailyWithdrawalLimit: "5000 USDT",
+  singleWithdrawalLimit: "200",
+  monthlyWithdrawalLimit: "200",
+  certificateOfIncorporation: "IMG23038477585.jpeg",
+  cacForm: "IMG23038477585.jpeg",
+  authorizationLetter: "IMG23038477585.jpeg",
+  validIdDirector: "IMG23038477585.jpeg",
+  recentUtilityBill: "IMG23038477585.jpeg",
+});
