@@ -22,6 +22,7 @@ import Settings from './Components/Dashboard/settings/ProfileSettings';
 import RatesAndFees from './Components/Dashboard/rates-fees/RatesAndFees';
 import Limits from './Components/Dashboard/limits/Limits';
 import Team from './Components/Dashboard/team/Team';
+import Otp from './Pages/Auth/Otp';
 
 function Overview() {
   return (
@@ -56,6 +57,7 @@ function App() {
       <Routes>
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
+        <Route path="/otp" element={<Otp />} />
         
         {/* Dashboard routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
