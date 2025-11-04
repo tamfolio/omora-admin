@@ -21,6 +21,7 @@ import BusinessDetail from './Components/Dashboard/compliance/BusinessDetail';
 import Settings from './Components/Dashboard/settings/ProfileSettings';
 import RatesAndFees from './Components/Dashboard/rates-fees/RatesAndFees';
 import Limits from './Components/Dashboard/limits/Limits';
+import Team from './Components/Dashboard/team/Team';
 import Otp from './Pages/Auth/Otp';
 
 function Overview() {
@@ -80,6 +81,7 @@ function App() {
           <Route path="compliance/business/:id" element={<BusinessDetail />} />
           <Route path="rates-fees" element={<RatesAndFees />} />
           <Route path="limits" element={<Limits />} />
+          <Route path="teams" element={<Team />} />
           <Route path="settings" element={<Settings />} />
         </Route>
 
