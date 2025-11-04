@@ -110,7 +110,7 @@ function Login() {
             </div>
 
             {/* Sign In Button */}
-            <Link to='/dashboard'>
+            <Link to='/otp'>
             <button
               type="submit"
               className='w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors'
